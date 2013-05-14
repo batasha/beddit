@@ -3,7 +3,7 @@
 <ol>
   <% @posts.each do |post| %>
 
-  <li><h3><%= post.url %></h3>
+  <li><h3><%= link_to "#{post.url}", post_url(post) %></h3>
     (posted by <%= link_to post.user.username, user_url(post.user) %>)
   </li>
 

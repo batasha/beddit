@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
 
   validates :username, :presence => true, :uniqueness => true
   validates :password, :presence => true
+
+  def to_s
+    self.username
+  end
 end

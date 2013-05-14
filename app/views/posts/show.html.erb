@@ -1,1 +1,23 @@
+<%= link_to "Main Page", posts_url %>
 <h1><%= @post.url %></h1>
+
+<%= form_for(@comment) do |f| %>
+  <%= f.label :body, "Comment" %>
+  <%= f.text_area :body %><br>
+
+  <%= f.hidden_field :post_id %>
+  <%= f.submit("Post Comment") %>
+<% end %>
+
+<h2>Comments</h2>
+
+<% @post.comments.each do |comment| %>
+  <% unless comment.id.nil? %>
+
+    <%= comment.body %>
+      <br>
+      Posted by: <%= comment.user %> at <%= comment.created_at %>
+      <br>
+      <br>
+  <% end %>
+<% end %>

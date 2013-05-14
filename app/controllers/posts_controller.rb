@@ -17,6 +17,12 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @post.comments.build
+    @comment = @post.comments.build
   end
+
+  def update
+    @post = Post.find(params[:id])
+    redirect_to post_url(@post)
+  end
+
 end

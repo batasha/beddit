@@ -2,9 +2,8 @@ Beddit::Application.routes.draw do
   resources :users
   resources :emails
 
-  resources :posts do
-    resources :comments
-  end
+  resources :posts
+  resources :comments
 
   resource :session, :only => [:create, :destroy, :new]
 
