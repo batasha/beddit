@@ -1,0 +1,11 @@
+<h1>Add a Comment</h1>
+
+<%= form_for(@comment) do |f| %>
+  <%= f.label :body, "Comment" %>
+  <%= f.text_area :body %>
+
+  <%= f.collection_select :user_id, User.all, :id, :username %>
+
+  <%= f.collection_select :post_id, Post.all, :id, :url %>
+
+<% end %>
