@@ -1,7 +1,10 @@
 Beddit::Application.routes.draw do
   resources :users
   resources :emails
-  resources :posts
+
+  resources :posts do
+    resources :comments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

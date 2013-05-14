@@ -1,0 +1,17 @@
+<h1> Sign up for Beddit </h1>
+
+<%= form_for(@user) do |f| %>
+
+  <%= f.label :username %>
+  <%= f.text_field :username %><br>
+
+  <%= f.label :biography %>
+  <%= f.text_area :biography %><br>
+
+  <%= f.fields_for(:emails) do |email_form| %>
+    <%= email_form.label :email, "Email" %>
+    <%= email_form.text_field :email%><br>
+  <% end%>
+
+  <%= f.submit %>
+<% end %>

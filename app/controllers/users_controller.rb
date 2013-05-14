@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     @user.save!
+    redirect_to user_url(@user)
   end
 
   def show
