@@ -14,6 +14,11 @@
 <% @post.comments.each do |comment| %>
   <% unless comment.id.nil? %>
 
+  <form action="/comment_votes" method="post">
+    <input type="hidden" name="comment_vote[comment_id]" value="<%= comment.id %>">
+    <input type="submit" name="commit" value="Upvote">
+  </form>
+  <%= comment.comment_votes.count %> Upvotes
     <%= comment.body %>
       <br>
       Posted by: <%= comment.user %> at <%= comment.created_at %>

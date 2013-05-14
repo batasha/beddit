@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.sort_by { |p| p.created_at }.reverse
+    @posts = Post.all.sort_by { |p| p.recent_upvotes }.reverse
   end
 
   def new

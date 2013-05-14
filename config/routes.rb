@@ -4,6 +4,8 @@ Beddit::Application.routes.draw do
 
   resources :posts
   resources :comments
+  resources :post_votes
+  resources :comment_votes
 
   resource :session, :only => [:create, :destroy, :new]
 

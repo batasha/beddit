@@ -3,7 +3,13 @@
 <ol>
   <% @posts.each do |post| %>
 
-  <li><h3><%= link_to "#{post.url}", post_url(post) %></h3>
+  <li>
+    <form action="/post_votes" method="post">
+      <input type="hidden" name="post_vote[post_id]" value="<%= post.id %>">
+      <input type="submit" name="commit" value="Upvote">
+    </form>
+    <%= post.post_votes.count %> Upvotes, <%= post.comments.count %> Comments
+    <h3><%= link_to "#{post.url}", post_url(post) %></h3>
     (posted by <%= link_to post.user.username, user_url(post.user) %>)
   </li>
 

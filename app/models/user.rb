@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
   has_many :emails
   has_many :posts
+  has_many :post_votes
+  has_many :comment_votes
   accepts_nested_attributes_for :emails
 
   validates :username, :presence => true, :uniqueness => true
