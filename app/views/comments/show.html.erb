@@ -1,0 +1,12 @@
+<h1>Comment on <%= link_to @comment.post.url, post_url(@comment.post) %></h1>
+
+<form action="/comment_votes" method="post">
+  <input type="hidden" name="comment_vote[comment_id]" value="<%= @comment.id %>">
+  <input type="submit" name="commit" value="Upvote">
+</form>
+<%= @comment.comment_votes.count %> Upvotes
+<br>
+At <%= @comment.created_at %> <%= @comment.user %> said:
+<br><br>
+  <%= @comment.body %>
+    <br>
