@@ -1,0 +1,10 @@
+<h1>Beddit - The Front Page of Your Bed</h1>
+
+<% @posts.each do |post| %>
+
+<ol>
+  <li><h3><%= post.url %></h3>
+    (posted by <%= link_to post.user.username, user_url(post.user) %>)
+  </li>
+</ol>
+<% end %>
