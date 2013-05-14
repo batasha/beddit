@@ -19,7 +19,7 @@
     <input type="submit" name="commit" value="Upvote">
   </form>
   <%= comment.comment_votes.count %> Upvotes
-    <%= comment.body %>
+    <%= link_to comment.body, comment_url(comment) %>
       <br>
       Posted by: <%= comment.user %> at <%= comment.created_at %>
       <br>

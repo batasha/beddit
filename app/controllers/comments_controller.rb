@@ -13,5 +13,6 @@ class CommentsController < ApplicationController
 
   def show
     @comment = Comment.find(params[:id])
+    @child = @comment.children.build
   end
 end

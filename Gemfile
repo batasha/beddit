@@ -24,6 +24,7 @@ gem 'pry-rails'
 gem 'jquery-rails'
 
 gem 'kaminari'
+gem 'better_errors'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
