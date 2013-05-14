@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @user = current_user
     @post = Post.new
   end
 
@@ -11,6 +12,7 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
 
     @post.save!
+    redirect_to root_url
   end
 
   def show

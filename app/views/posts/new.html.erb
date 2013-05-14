@@ -1,0 +1,11 @@
+<%= debug @user %>
+
+<%= form_for(@post) do |f| %>
+
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+
+  <input type="hidden" name="post[user_id]" value="<%= @user.id %>">
+
+  <%= f.submit %>
+<% end %>
